@@ -76,10 +76,10 @@ public class LSDSort {
         for (int i = 0; i < name.length; i++) {
             StringBuilder sb = new StringBuilder();
             int diff = maxLen-name[i].length();
+            sb.append(name[i]);
             for (int j = 0; j < diff; j++) {
                 sb.append('`');
             }
-            sb.append(name[i]);
             padded[i] = sb.toString();
         }
         sort(padded, maxLen);
