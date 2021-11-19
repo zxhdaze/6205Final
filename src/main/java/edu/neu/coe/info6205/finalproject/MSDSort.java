@@ -1,7 +1,7 @@
 package edu.neu.coe.info6205.finalproject;
 
 public class MSDSort {
-    private static final int R = 26;
+    private static final int R = 256;
 
     public static void sort(String[] a) {
         String[] aux = new String[a.length];
@@ -24,7 +24,7 @@ public class MSDSort {
     }
 
     private static int charAt(String s, int d) {
-        if (d < s.length()) return s.charAt(d) - 97;
+        if (d < s.length()) return s.charAt(d);
         else return -1;
     }
 
