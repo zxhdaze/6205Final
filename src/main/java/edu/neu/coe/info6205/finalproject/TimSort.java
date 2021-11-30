@@ -1,5 +1,6 @@
 package edu.neu.coe.info6205.finalproject;
 import java.text.Collator;
+import java.util.Arrays;
 import java.util.Locale;
 public class TimSort {
     static int MIN_MERGE = 32;
@@ -155,7 +156,10 @@ public class TimSort {
     // Driver code
     public static void main(String[] args)
     {
-        String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
+        //String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
+        String[] zhongwen = FileUtil.getAllNamesToArray();
+        zhongwen = Arrays.copyOfRange(zhongwen,0,10);
+
 //        String[] pinyin = new String[3];
 //        for (int i = 0; i < zhongwen.length; i++) {
 //            try {

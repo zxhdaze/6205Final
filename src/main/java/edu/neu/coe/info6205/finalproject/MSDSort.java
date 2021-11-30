@@ -1,5 +1,7 @@
 package edu.neu.coe.info6205.finalproject;
 
+import java.util.Arrays;
+
 public class MSDSort {
     private static final int R = 256;
 
@@ -82,7 +84,9 @@ public class MSDSort {
     }
 
     public static void main(String[] args) {
-        String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
+        String[] zhongwen = FileUtil.getAllNamesToArray();
+        zhongwen = Arrays.copyOfRange(zhongwen,0,10);
+        //String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
         sortChinese(zhongwen);
 //        String[] pinyin = new String[3];
 //        for (int i = 0; i < zhongwen.length; i++) {
