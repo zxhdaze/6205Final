@@ -7,45 +7,43 @@ public class MSDSort {
 
     /**
      * Radix sort by pinyin
-     *
      * @param a string array of pinyin
      */
-    private static void sort(String[] a, int[] map) {
+    public static void sort(String[] a, int[] map) {
         String[] aux = new String[a.length];
         int[] amap = new int[map.length];
-        sort(a, aux, map, amap, 0, a.length - 1, 0);
+        sort(a, aux,map,amap, 0, a.length - 1, 0);
     }
 
     /**
      * Radix sort by pinyin
-     *
-     * @param a   string array of pinyin
+     * @param a string array of pinyin
      * @param aux
      * @param lo
      * @param hi
      * @param d
      */
-    private static void sort(String[] a, String[] aux, int[] map, int[] amap, int lo, int hi, int d) {
+    private static void sort(String[] a, String[] aux,int[] map, int[] amap, int lo, int hi, int d) {
         if (hi <= lo) return;
         int[] count = new int[R + 2];
         for (int i = lo; i <= hi; i++)
             count[charAt(a[i], d) + 2]++;
         for (int r = 0; r < R + 1; r++)
             count[r + 1] += count[r];
-        for (int i = lo; i <= hi; i++) {
+        for (int i = lo; i <= hi; i++){
             aux[count[charAt(a[i], d) + 1]] = a[i];
             amap[count[charAt(a[i], d) + 1]] = map[i];
             count[charAt(a[i], d) + 1]++;
         }
 
-        for (int i = lo; i <= hi; i++) {
+        for (int i = lo; i <= hi; i++){
             a[i] = aux[i - lo];
-            map[i] = amap[i - lo];
+            map[i] = amap[i-lo];
         }
 
 
         for (int r = 0; r < R; r++)
-            sort(a, aux, map, amap, lo + count[r], lo + count[r + 1] - 1, d + 1);
+            sort(a, aux, map,amap,lo + count[r], lo + count[r + 1] - 1, d + 1);
     }
 
 
@@ -55,19 +53,19 @@ public class MSDSort {
     }
 
 
-    public static void sort(String[] zhongwen) {
+    public static void sort(String[] zhongwen){
         String[] pinyin = preprocess(zhongwen);
         int[] map = new int[zhongwen.length];
         for (int i = 0; i < map.length; i++)
             map[i] = i;
-        sort(pinyin, map);
+        sort(pinyin,map);
         String[] rawA = new String[zhongwen.length];
-        System.arraycopy(zhongwen, 0, rawA, 0, zhongwen.length);
-        for (int i = 0; i < zhongwen.length; i++)
+        System.arraycopy(zhongwen,0,rawA,0,zhongwen.length);
+        for(int i = 0; i < zhongwen.length;i++)
             zhongwen[i] = rawA[map[i]];
     }
 
-    private static String[] preprocess(String[] zhongwen) {
+    private static String[] preprocess(String[] zhongwen){
         String[] pinyin = new String[zhongwen.length];
         for (int i = 0; i < zhongwen.length; i++) {
             try {

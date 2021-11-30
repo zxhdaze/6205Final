@@ -2,6 +2,7 @@ package edu.neu.coe.info6205.finalproject;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class TimSortTest {
@@ -41,6 +42,30 @@ public class TimSortTest {
         assertEquals("李维颖", cnNames[4]);
         assertEquals("舒乐乐", cnNames[5]);
         assertEquals("喻春芳", cnNames[6]);
+    }
+
+    @Test
+    public void sortChinese1() {
+        String[] testCase = {"高炜", "崔大巍", "蔡政翰", "李儒龙", "刘守祥", "牛桂英"};
+        String[] ans = {"蔡政翰", "崔大巍", "高炜", "李儒龙", "刘守祥", "牛桂英"};
+        TimSort.timSort(testCase, testCase.length);
+        assertArrayEquals(ans, testCase);
+    }
+
+    @Test
+    public void sortChinese2() {
+        String[] testCase = {"李大营", "魏晓腾", "卢若冰", "胡会鹏", "颜建新", "姜元元"};
+        String[] ans = {"胡会鹏", "姜元元", "李大营", "卢若冰", "魏晓腾", "颜建新"};
+        TimSort.timSort(testCase, testCase.length);
+        assertArrayEquals(ans, testCase);
+    }
+
+    @Test
+    public void sortChinese3() {
+        String[] testCase = {"吕海婷", "吴宪生", "谷晓明", "杨惠如", "邢红军", "宁金霞"};
+        String[] ans = {"谷晓明", "吕海婷", "宁金霞", "吴宪生", "邢红军", "杨惠如"};
+        TimSort.timSort(testCase, testCase.length);
+        assertArrayEquals(ans, testCase);
     }
 
 }
