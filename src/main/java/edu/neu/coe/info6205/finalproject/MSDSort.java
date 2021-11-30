@@ -53,7 +53,7 @@ public class MSDSort {
     }
 
 
-    public static void sortChinese(String[] zhongwen){
+    public static void sort(String[] zhongwen){
         String[] pinyin = preprocess(zhongwen);
         int[] map = new int[zhongwen.length];
         for (int i = 0; i < map.length; i++)
@@ -63,9 +63,6 @@ public class MSDSort {
         System.arraycopy(zhongwen,0,rawA,0,zhongwen.length);
         for(int i = 0; i < zhongwen.length;i++)
             zhongwen[i] = rawA[map[i]];
-        for (int i = 0;i < zhongwen.length;i++)
-            System.out.println(zhongwen[i]);
-
     }
 
     private static String[] preprocess(String[] zhongwen){
@@ -82,9 +79,12 @@ public class MSDSort {
 
     public static void main(String[] args) {
         String[] zhongwen = FileUtil.getAllNamesToArray();
-        zhongwen = Arrays.copyOfRange(zhongwen,0,10);
+        zhongwen = Arrays.copyOfRange(zhongwen, 0, 10);
         //String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
-        sortChinese(zhongwen);
+        sort(zhongwen);
+
+        for (int i = 0; i < zhongwen.length; i++) System.out.println(zhongwen[i]);
+
 //        String[] pinyin = new String[3];
 //        for (int i = 0; i < zhongwen.length; i++) {
 //            try {
