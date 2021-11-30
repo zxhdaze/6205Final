@@ -1,11 +1,8 @@
 package edu.neu.coe.info6205.finalproject;
 
-import edu.neu.coe.info6205.finalproject.QuickSortDualPivot;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class QuickSortTest {
 

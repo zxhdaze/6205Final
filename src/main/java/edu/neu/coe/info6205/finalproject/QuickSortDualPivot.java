@@ -8,7 +8,7 @@ public class QuickSortDualPivot {
 
     private static Collator collator = Collator.getInstance(Locale.CHINA);
 
-    private static void sort(String[] a, int lo, int hi) {
+    public static void sort(String[] a, int lo, int hi) {
         if (hi <= lo) return;
 
         // make sure a[lo] <= a[hi]
