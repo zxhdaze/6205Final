@@ -9,7 +9,7 @@ public class MSDSort {
      * Radix sort by pinyin
      * @param a string array of pinyin
      */
-    private static void sort(String[] a, int[] map) {
+    public static void sort(String[] a, int[] map) {
         String[] aux = new String[a.length];
         int[] amap = new int[map.length];
         sort(a, aux,map,amap, 0, a.length - 1, 0);
@@ -53,7 +53,7 @@ public class MSDSort {
     }
 
 
-    private static void sortChinese(String[] zhongwen){
+    public static void sortChinese(String[] zhongwen){
         String[] pinyin = preprocess(zhongwen);
         int[] map = new int[zhongwen.length];
         for (int i = 0; i < map.length; i++)
@@ -65,9 +65,6 @@ public class MSDSort {
             zhongwen[i] = rawA[map[i]];
         for (int i = 0;i < zhongwen.length;i++)
             System.out.println(zhongwen[i]);
-
-
-
 
     }
 
