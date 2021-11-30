@@ -1,7 +1,9 @@
 package edu.neu.coe.info6205.finalproject;
-
+import java.text.Collator;
+import java.util.Locale;
 public class TimSort {
     static int MIN_MERGE = 32;
+    private static Collator collator = Collator.getInstance(Locale.CHINA);
 
     public static int minRunLength(int n)
     {
@@ -26,7 +28,8 @@ public class TimSort {
         {
             String temp = arr[i];
             int j = i - 1;
-            while (j >= left && arr[j].compareTo(temp)>0)
+            //while (j >= left && arr[j].compareTo(temp)>0)
+            while (j >= left && collator.compare(arr[j],temp)>0)
             {
                 arr[j + 1] = arr[j];
                 j--;
@@ -61,7 +64,8 @@ public class TimSort {
         // in larger sub array
         while (i < len1 && j < len2)
         {
-            if (left[i].compareTo(right[j])<=0)
+            //if (left[i].compareTo(right[j])<=0)
+            if (collator.compare(left[i],right[j]) <= 0)
             {
                 arr[k] = left[i];
                 i++;
@@ -152,23 +156,23 @@ public class TimSort {
     public static void main(String[] args)
     {
         String[] zhongwen = {"张三", "李四", "赵武"};
-        String[] pinyin = new String[3];
-        for (int i = 0; i < zhongwen.length; i++) {
-            try {
-                pinyin[i] = PinyinUtil.getPinYinByName(zhongwen[i]);
-            } catch (Exception e) {
-                System.out.println("error");
-            }
-        }
+//        String[] pinyin = new String[3];
+//        for (int i = 0; i < zhongwen.length; i++) {
+//            try {
+//                pinyin[i] = PinyinUtil.getPinYinByName(zhongwen[i]);
+//            } catch (Exception e) {
+//                System.out.println("error");
+//            }
+//        }
 
-        for (String s : pinyin) {
+        for (String s : zhongwen) {
             System.out.println(s);
         }
         System.out.println("-------------------------------------");
 
-        timSort(pinyin, pinyin.length);
+        timSort(zhongwen, zhongwen.length);
 
-        for (String s : pinyin) {
+        for (String s : zhongwen) {
             System.out.println(s);
         }
         System.out.println("-------------------------------------");
