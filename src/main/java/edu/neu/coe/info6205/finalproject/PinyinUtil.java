@@ -20,7 +20,7 @@ public class PinyinUtil {
      * @return
      */
     public static String[] getPinYinWithToneMark(char word) throws BadHanyuPinyinOutputFormatCombination {
-        format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
+        format.setToneType(HanyuPinyinToneType.WITH_TONE_NUMBER);
         format.setVCharType(HanyuPinyinVCharType.WITH_U_UNICODE);
         return PinyinHelper.toHanyuPinyinStringArray(word, format);
     }

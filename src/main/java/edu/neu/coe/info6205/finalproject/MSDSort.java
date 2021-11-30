@@ -82,7 +82,7 @@ public class MSDSort {
     }
 
     public static void main(String[] args) {
-        String[] zhongwen = {"张三", "李四", "赵武"};
+        String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
         sortChinese(zhongwen);
 //        String[] pinyin = new String[3];
 //        for (int i = 0; i < zhongwen.length; i++) {
