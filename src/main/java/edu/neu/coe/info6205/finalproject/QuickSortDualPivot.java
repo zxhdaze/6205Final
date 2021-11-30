@@ -1,6 +1,7 @@
 package edu.neu.coe.info6205.finalproject;
 
 import java.text.Collator;
+import java.util.Arrays;
 import java.util.Locale;
 
 public class QuickSortDualPivot {
@@ -50,9 +51,13 @@ public class QuickSortDualPivot {
         a[j] = swap;
     }
 
-    // Read strings from standard input, sort them, and print.
     public static void main(String[] args) {
-        String[] cnNames = {"张三", "李四", "扎炸", "赵武"};
+        // Read input data from file
+        String[] cnNames = FileUtil.getAllNamesToArray();
+        // cnNames = Arrays.copyOfRange(cnNames, 0, 10);
+
+        // Read input data from memory
+        // String[] cnNames = {"张三", "李四", "扎炸", "赵武"};
 
         /* Sort by chinese name  */
         for (String s : cnNames) {
