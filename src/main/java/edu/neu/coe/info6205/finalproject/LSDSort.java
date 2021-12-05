@@ -148,10 +148,13 @@ public class LSDSort {
 
     public static void main(String[] args) {
 //        String[] zhongwen = FileUtil.getAllNamesToArray();
-        String[] zhongwen = {"张三", "李四", "扎炸", "赵武", "瞿瞿"};
-        String[] s = PinyinUtil.getPinyinWithVWithTone(zhongwen[4]);
-        System.out.println(s[0]);
+        String[] zhongwen = FileUtil.getAllNamesToArray();
+        // zhongwen = Arrays.copyOfRange(zhongwen, 0, 100);
+        // String[] zhongwen = {"张三", "李四", "扎炸", "赵武", "瞿瞿"};
+        // String[] s = PinyinUtil.getPinyinWithVWithTone(zhongwen[4]);
+        // System.out.println(s[0]);
         sortChinese(zhongwen);
+        for (int i = 0; i < 100; i++) System.out.println(zhongwen[i]);
     }
 
 }
