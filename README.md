@@ -6,22 +6,30 @@
 + Benchmark all sort methods to sort 250k, 500k, 1 million, 2 million, 4 million Chinese names.
 + Husky sort and related works are linked to another [repo](https://github.com/zxhdaze/HuskySort).
 
-## Report and Paper
+## File Description
+
+### Report and Paper
 + [Report](./6205%20Fall%20project%20report.pdf)
 + [Paper](./6205%20Fall%20project%20paper.pdf)
 
-## File Description
-Under `./main/...` directory:
+### Sample Output File
++ [MSD Radix Sort Result](./MSDResult.txt)
++ [LSD Radix Sort Result](./LSDResult.txt)
++ [Quick Sort Result](./QuickResult.txt)
++ [Tim Sort Result](./TimResult.txt)
++ [Husky Sort Result](./HuskyResult.txt)
+
+### Main Classes
 |File|Description|
 |----|-----------|
-|[FileUtil.java](./src/main/java/edu/neu/coe/info6205/finalproject/FileUtil.java)|read files|
-|[PinyinUtil.java](./src/main/java/edu/neu/coe/info6205/finalproject/PinyinUtil.java)|convert Chinese to Pinyin|
+|[FileUtil.java](./src/main/java/edu/neu/coe/info6205/finalproject/FileUtil.java)|Read files|
+|[PinyinUtil.java](./src/main/java/edu/neu/coe/info6205/finalproject/PinyinUtil.java)|Convert Chinese to Pinyin|
 |[MSDSort.java](./src/main/java/edu/neu/coe/info6205/finalproject/MSDSort.java)|MSD radix sort|
 |[LSDSort.java](./src/main/java/edu/neu/coe/info6205/finalproject/LSDSort.java)|LSD radix sort|
 |[QuickSortDualPivot.java](./src/main/java/edu/neu/coe/info6205/finalproject/QuickSortDualPivot.java)|Dual pivot quick sort|
 |[TimSort.java](./src/main/java/edu/neu/coe/info6205/finalproject/TimSort.java)|Tim sort|
 
-Under `./test/...` directory:
+### Test and Benchmark
 |File|Description|
 |----|-----------|
 |[Benchmark.java](./src/test/java/edu/neu/coe/info6205/finalproject/Benchmark.java)|Benchmark 4 sorting algorithms|
