@@ -79,11 +79,11 @@ public class MSDSort {
 
     public static void main(String[] args) {
         String[] zhongwen = FileUtil.getAllNamesToArray();
-        zhongwen = Arrays.copyOfRange(zhongwen, 0, 10);
+        // zhongwen = Arrays.copyOfRange(zhongwen, 0, 100);
         //String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
         sort(zhongwen);
 
-        for (int i = 0; i < zhongwen.length; i++) System.out.println(zhongwen[i]);
+        for (int i = 0; i < 100; i++) System.out.println(zhongwen[i]);
 
 //        String[] pinyin = new String[3];
 //        for (int i = 0; i < zhongwen.length; i++) {

@@ -54,22 +54,23 @@ public class QuickSortDualPivot {
     public static void main(String[] args) {
         // Read input data from file
         String[] cnNames = FileUtil.getAllNamesToArray();
-        // cnNames = Arrays.copyOfRange(cnNames, 0, 10);
+        // cnNames = Arrays.copyOfRange(cnNames, 0, 100);
 
         // Read input data from memory
         // String[] cnNames = {"张三", "李四", "扎炸", "赵武"};
 
         /* Sort by chinese name  */
-        for (String s : cnNames) {
-            System.out.println(s);
-        }
+        // for (String s : cnNames) {
+        //     System.out.println(s);
+        // }
         System.out.println("-------------------------------------");
 
         QuickSortDualPivot.sort(cnNames, 0, cnNames.length - 1);
 
-        for (String s : cnNames) {
-            System.out.println(s);
-        }
+        // for (String s : cnNames) {
+        //     System.out.println(s);
+        // }
+        for (int i = 0; i < 100; i++) System.out.println(cnNames[i]);
         System.out.println("-------------------------------------");
 
 //        /* Sort by pinyin */

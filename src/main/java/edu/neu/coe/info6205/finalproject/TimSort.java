@@ -158,7 +158,7 @@ public class TimSort {
     {
         //String[] zhongwen = {"张三", "李四", "扎炸", "赵武"};
         String[] zhongwen = FileUtil.getAllNamesToArray();
-        zhongwen = Arrays.copyOfRange(zhongwen,0,10);
+        // zhongwen = Arrays.copyOfRange(zhongwen,0,100);
 
 //        String[] pinyin = new String[3];
 //        for (int i = 0; i < zhongwen.length; i++) {
@@ -169,16 +169,17 @@ public class TimSort {
 //            }
 //        }
 
-        for (String s : zhongwen) {
-            System.out.println(s);
-        }
+        // for (String s : zhongwen) {
+        //     System.out.println(s);
+        // }
         System.out.println("-------------------------------------");
 
         timSort(zhongwen, zhongwen.length);
 
-        for (String s : zhongwen) {
-            System.out.println(s);
-        }
+        // for (String s : zhongwen) {
+        //     System.out.println(s);
+        // }
+        for (int i = 0; i < 100; i++) System.out.println(zhongwen[i]);
         System.out.println("-------------------------------------");
     }
 }
