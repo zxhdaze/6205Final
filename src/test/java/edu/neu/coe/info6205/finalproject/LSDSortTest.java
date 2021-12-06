@@ -2,6 +2,8 @@ package edu.neu.coe.info6205.finalproject;
 
 import org.junit.Test;
 
+import java.util.*;
+
 import static org.junit.Assert.*;
 
 public class LSDSortTest {
@@ -9,6 +11,9 @@ public class LSDSortTest {
     @Test
     public void sortChinese1() {
         String[] testCase = {"高炜", "崔大巍", "蔡政翰", "李儒龙", "刘守祥", "牛桂英"};
+        List<String> list = Arrays.asList(testCase);
+        Collections.shuffle(list);
+        testCase = list.toArray(new String[0]);
         String[] ans = {"蔡政翰", "崔大巍", "高炜", "李儒龙", "刘守祥", "牛桂英"};
         LSDSort.sortChinese(testCase);
         assertArrayEquals(ans, testCase);
@@ -17,6 +22,9 @@ public class LSDSortTest {
     @Test
     public void sortChinese2() {
         String[] testCase = {"李大营", "魏晓腾", "卢若冰", "胡会鹏", "颜建新", "姜元元"};
+        List<String> list = Arrays.asList(testCase);
+        Collections.shuffle(list);
+        testCase = list.toArray(new String[0]);
         String[] ans = {"胡会鹏", "姜元元", "李大营", "卢若冰", "魏晓腾", "颜建新"};
         LSDSort.sortChinese(testCase);
         assertArrayEquals(ans, testCase);
@@ -25,9 +33,46 @@ public class LSDSortTest {
     @Test
     public void sortChinese3() {
         String[] testCase = {"吕海婷", "吴宪生", "谷晓明", "杨惠如", "邢红军", "宁金霞"};
+        List<String> list = Arrays.asList(testCase);
+        Collections.shuffle(list);
+        testCase = list.toArray(new String[0]);
         String[] ans = {"谷晓明", "吕海婷", "宁金霞", "吴宪生", "邢红军", "杨惠如"};
         LSDSort.sortChinese(testCase);
         assertArrayEquals(ans, testCase);
+    }
+
+    @Test
+    public void sortChinese4() {
+        String[] testCase1 = {"蒋媛媛", "蒋媛"};
+        String[] testCase2 = {"蒋媛", "蒋媛媛"};
+        String[] ans = {"蒋媛", "蒋媛媛"};
+        LSDSort.sortChinese(testCase1);
+        LSDSort.sortChinese(testCase2);
+        assertArrayEquals(ans, testCase1);
+        assertArrayEquals(ans, testCase2);
+    }
+
+    @Test
+    public void sortChinese5() {
+        String[] testCase1 = {"蒋媛媛", "蒋雨昂"};
+        String[] testCase2 = {"蒋雨昂", "蒋媛媛"};
+        String[] ans = {"蒋雨昂", "蒋媛媛"};
+        LSDSort.sortChinese(testCase1);
+        LSDSort.sortChinese(testCase2);
+        assertArrayEquals(ans, testCase1);
+        assertArrayEquals(ans, testCase2);
+    }
+
+    @Test
+    public void sortChinese6() {
+        String[] testCase1 = {"蒋媛", "蒋元"};
+        String[] testCase2 = {"蒋元", "蒋媛"};
+        String[] ans1 = {"蒋媛", "蒋元"};
+        String[] ans2 = {"蒋元", "蒋媛"};
+        LSDSort.sortChinese(testCase1);
+        LSDSort.sortChinese(testCase2);
+        assertArrayEquals(ans1, testCase1);
+        assertArrayEquals(ans2, testCase2);
     }
 
     @Test
